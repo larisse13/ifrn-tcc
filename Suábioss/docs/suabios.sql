@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS suabios; 
+
+CREATE DATABASE suabios;
+
+USE suabios;
+
+CREATE TABLE usuarios(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT INTO usuarios(nome) VALUES ('Alberto');
+
+SELECT * FROM usuarios;
