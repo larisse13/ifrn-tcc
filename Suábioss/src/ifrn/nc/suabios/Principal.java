@@ -6,6 +6,9 @@ import ifrn.nc.suabios.persistencia.UsuarioDAO;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Esta classe é responsável para executar ....
+ */
 public class Principal {
 	
 	static Scanner teclado = new Scanner(System.in);
@@ -16,14 +19,14 @@ public class Principal {
 		
 		do{
 			
-			System.out.println("\n .:: MENU DE OP��ES ::.");
+			System.out.println("\n .:: MENU DE OPÇÕES ::.");
 			
 			System.out.println(" 0 - Sair");
-			System.out.println(" 1 - Cadastrar um usu�rio");
-			System.out.println(" 2 - Excluir um usu�rio");
-			System.out.println(" 3 - Atualizar um usu�rio");
-			System.out.println(" 4 - Buscar um usu�rio por ID");
-			System.out.println(" 5 - Listar todos os usu�rios");
+			System.out.println(" 1 - Cadastrar um usuário");
+			System.out.println(" 2 - Excluir um usuário");
+			System.out.println(" 3 - Atualizar um usuário");
+			System.out.println(" 4 - Buscar um usuário por ID");
+			System.out.println(" 5 - Listar todos os usuários");
 			
 			op = teclado.nextInt();
 			teclado.nextLine();
@@ -37,31 +40,31 @@ public class Principal {
 			
 			case 0:
 				
-				System.out.println(".:: SUA CONEX�O FOI ENCERRADA! ::.");
+				System.out.println(".:: SUA CONEXÃO FOI ENCERRADA! ::.");
 				
 				break;
 				
 				
 			case 1: 
 				
-				System.out.println(".:: CADASTRO DE USU�RIOS ::.");
+				System.out.println(".:: CADASTRO DE USUÁRIOS ::.");
 				
-				System.out.println(" Informe o nome do usu�rio: ");
+				System.out.println(" Informe o nome do usuário: ");
 				String nome = teclado.nextLine();
 			
 				usuario.setNome(nome);
 				
 				usuariodao.add(usuario);
 				
-				System.out.println(".:: USU�RIO CADASTRADO COM SUCESSO! ::.");
+				System.out.println(".:: USUÁRIO CADASTRADO COM SUCESSO! ::.");
 				
 				break;
 				
 			case 2: 
 				
-				System.out.println(".:: EXCLUIR UM USU�RIO ::.");
+				System.out.println(".:: EXCLUIR UM USUÁRIO ::.");
 				
-				System.out.println("Informe o ID do usu�rio que deseja excluir: ");
+				System.out.println("Informe o ID do usuário que deseja excluir: ");
 				int n = teclado.nextInt();
 				teclado.nextLine();
 				
@@ -69,38 +72,38 @@ public class Principal {
 				
 				usuariodao.delete(usuario);
 				
-				System.out.println(".:: USU�RIO DELETADO COM SUCESSO! ::.");
+				System.out.println(".:: USUÁRIO DELETADO COM SUCESSO! ::.");
 				
 				break;				
 			
 				
 			case 3:
 				
-				System.out.println(".:: ATUALIZAR UM USU�RIO ::.");
+				System.out.println(".:: ATUALIZAR UM USUÁRIO ::.");
 				
-				System.out.println("Informe o ID do usu�rio que deseja atualizar:");
+				System.out.println("Informe o ID do usuário que deseja atualizar:");
 				int id = teclado.nextInt();
 				teclado.nextLine();
 				
 				usuario.setId(id);
 				
-				System.out.println("Informe o novo nome do usu�rio: ");
+				System.out.println("Informe o novo nome do usuário: ");
 				String nome_n = teclado.nextLine();
 				
 				usuario.setNome(nome_n);
 				
 				usuariodao.atualizar(usuario);
 				
-				System.out.println(".:: USU�RIO ATUALIZADO COM SUCESSO! ::.");				
+				System.out.println(".:: USUÁRIO ATUALIZADO COM SUCESSO! ::.");				
 				
 				break;
 				
 				
 			case 4:
 				
-				System.out.println(".:: BUSCAR USU�RIO POR ID ::.");
+				System.out.println(".:: BUSCAR USUÁRIO POR ID ::.");
 				
-				System.out.println("Informe o ID do usu�rio que deseja buscar: ");
+				System.out.println("Informe o ID do usuário que deseja buscar: ");
 				int codigo = teclado.nextInt();
 				teclado.nextLine();
 				
@@ -113,7 +116,7 @@ public class Principal {
 				
 			case 5:
 				
-				System.out.println(".:: LISTA DE USU�RIOS ::.");
+				System.out.println(".:: LISTA DE USUÁRIOS ::.");
 				
 				List<Usuario> user = usuariodao.Listar();
 				
@@ -125,7 +128,7 @@ public class Principal {
 				
 			default:
 				
-				System.out.println(".:: OP��O INV�LIDA! POR FAVOR TENTE NOVAMENTE ::.");
+				System.out.println(".:: OPÇÃO INVÁLIDA! POR FAVOR TENTE NOVAMENTE ::.");
 				
 				break;
 			
